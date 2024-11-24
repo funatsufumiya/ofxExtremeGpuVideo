@@ -13,6 +13,11 @@
 #else
 #endif
 
+// if windows, include stdexcept
+#ifdef _MSC_VER
+#include <stdexcept>
+#endif
+
 #include <cstdio>
 #include <cstdint>
 
