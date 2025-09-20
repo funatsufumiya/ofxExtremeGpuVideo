@@ -29,7 +29,7 @@ common:
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
-	# ADDON_INCLUDES =
+	ADDON_INCLUDES =
 
 	# any special flag that should be passed to the compiler when using this
 	# addon
@@ -67,15 +67,15 @@ common:
 	ADDON_SOURCES_EXCLUDE += libs/lz4/tests%
 	ADDON_SOURCES_EXCLUDE += libs/lz4/contrib%
 	ADDON_SOURCES_EXCLUDE += libs/ofxCoroutine%
-	ADDON_SOURCES_EXCLUDE += libs/ofxImGui/%
-	ADDON_SOURCES_EXCLUDE += libs/squish-1.11/%
+# 	ADDON_SOURCES_EXCLUDE += libs/ofxImGui/%
+#	ADDON_SOURCES_EXCLUDE += libs/squish-1.11/%
 	ADDON_SOURCES_EXCLUDE += libs/squish-1.11_lib/%
 	ADDON_SOURCES_EXCLUDE += libs/tbb44_20150728oss/%
 	ADDON_SOURCES_EXCLUDE += libs/tbb44_20160128oss_win_0/%
 
 	# when parsing the file system looking for include paths exclude this for all or
 	# a specific platform
-	ADDON_INCLUDES_EXCLUDE += libs
+# 	ADDON_INCLUDES_EXCLUDE += libs
 	ADDON_INCLUDES_EXCLUDE += libs/lz4
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/cmake_unofficial%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/contrib%
@@ -85,9 +85,40 @@ common:
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/versionsTest%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/visual%
 	ADDON_INCLUDES_EXCLUDE += libs/ofxCoroutine%
-	ADDON_INCLUDES_EXCLUDE += libs/ofxImGui%
-	ADDON_INCLUDES_EXCLUDE += libs/ofxImGui%
-	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11%
-	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11_lib%
+# 	ADDON_INCLUDES_EXCLUDE += libs/ofxImGui%
+# 	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11%
+# 	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11_lib%
 	ADDON_INCLUDES_EXCLUDE += libs/tbb44_20150728oss%
 	ADDON_INCLUDES_EXCLUDE += libs/tbb44_20160128oss_win_0%
+
+vs:
+	ADDON_SOURCES_EXCLUDE += libs/oneapi-tbb-2022.2.0/%
+	ADDON_INCLUDES_EXCLUDE += libs/oneapi-tbb-2022.2.0/%
+
+osx:
+	ADDON_LDFLAGS = -Xlinker -rpath -Xlinker @executable_path
+	ADDON_INCLUDES_EXCLUDE -= libs/oneapi-tbb-2022.2.0%
+	ADDON_SOURCES_EXCLUDE -= libs/oneapi-tbb-2022.2.0%
+	ADDON_INCLUDES += libs/oneapi-tbb-2022.2.0/include
+	ADDON_INCLUDES += libs/squish-1.11
+	ADDON_INCLUDES += libs/squish-1.11_lib
+	ADDON_SOURCES_EXCLUDE += libs/squish-1.11/extra/%
+# ADDON_SOURCES_EXCLUDE -= libs/squish-1.11_lib/%
+#	ADDON_SOURCES += libs/squish-1.11/%
+#	ADDON_SOURCES += libs/squish-1.11_lib/%
+# 	ADDON_SOURCES += libs/squish-1.11/alpha.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/clusterfit.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/colourblock.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/colourfit.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/colourset.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/maths.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/rangefit.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/singlecolourfit.cpp
+# 	ADDON_SOURCES += libs/squish-1.11/squish.cpp
+#	ADDON_LIBS += libs/oneapi-tbb-2022.2.0/lib/%
+# libtbb_debug.dylib -> libtbb_debug.12.dylib
+# libtbb.dylib -> libtbb.12.dylib
+# libtbbmalloc_debug.dylib -> libtbbmalloc_debug.2.dylib
+# libtbbmalloc_proxy_debug.dylib -> libtbbmalloc_proxy_debug.2.dylib
+# libtbbmalloc_proxy.dylib -> libtbbmalloc_proxy.2.dylib
+# libtbbmalloc.dylib -> libtbbmalloc.2.dylib
