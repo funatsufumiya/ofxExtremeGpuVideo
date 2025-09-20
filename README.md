@@ -1,4 +1,4 @@
-This fork contains three versions.
+This fork contains three versions. Each contains different `addon_config.mk` for workaround fixes.
 
 - [feat/windows_fix](https://github.com/funatsufumiya/ofxExtremeGpuVideo/tree/feat/windows_fix): for PR https://github.com/Ushio/ofxExtremeGpuVideo/pull/8
 - [feat/player_mac_arm64](https://github.com/funatsufumiya/ofxExtremeGpuVideo/tree/feat/player_mac_arm64): for Issue https://github.com/Ushio/ofxExtremeGpuVideo/issues/10
