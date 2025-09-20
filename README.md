@@ -3,6 +3,9 @@ This fork contains three versions.
 - [feat/windows_fix](https://github.com/funatsufumiya/ofxExtremeGpuVideo/tree/feat/windows_fix): for PR https://github.com/Ushio/ofxExtremeGpuVideo/pull/8
 - [feat/player_mac_arm64](https://github.com/funatsufumiya/ofxExtremeGpuVideo/tree/feat/player_mac_arm64): for Issue https://github.com/Ushio/ofxExtremeGpuVideo/issues/10
 - [feat/converter_mac_arm64](https://github.com/funatsufumiya/ofxExtremeGpuVideo/tree/feat/converter_mac_arm64): for Issue https://github.com/Ushio/ofxExtremeGpuVideo/issues/10
+
+You can download [prebuilt binaries](https://github.com/funatsufumiya/ofxExtremeGpuVideo/releases) for macOS arm64 (Apple Silicon.)
+
 -----
 
 # Extreme Gpu Friendly Video Format
